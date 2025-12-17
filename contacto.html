@@ -91,7 +91,7 @@ footer{
     background-color: #D46A6A;
     text-align: center;
     padding: 10px 0;
-    position: relative;
+    position: fixed;
     bottom: 0;
 }
 </style>
@@ -152,6 +152,21 @@ footer{
     <footer>
         <p>&copy; 2025 Restaurante Rachel's. Todos los derechos reservados.</p>
     </footer>
+
+<script>
+    // Cuando el usuario seleccione "Enviar consulta", se mostrará un mensaje de confirmación (!Gracias! Tu consulta ha sido enviada correctamente.) y el formulario desaparecerá.
+    document.addEventListener("DOMContentLoaded", function() {
+        // Selecciona el primer formulario que aparece en la página
+        const form = document.querySelector("form");
+        // Añade un "escuchador" al formulario para detectar cuando se envía
+        form.addEventListener("submit", function(event) {
+            // Evita que el formulario recargue la página al enviarse
+            event.preventDefault(); 
+            // Para Reemplaza todo el contenido del formulario por un mensaje centrado, de color #550000 y en negrita
+            form.innerHTML = "<p style='color:#550000; font-weight:bold; text-align:center;font-size:24px;'>¡Gracias! Tu consulta ha sido enviada correctamente.</p>";
+        });
+    });
+</script>
 
 </body>
 
